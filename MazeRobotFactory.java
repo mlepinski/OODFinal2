@@ -10,6 +10,7 @@ public class MazeRobotFactory{
 	    {
 	    case CoinBot: return makeCoinBot(id, loc);
 	    case ScoutBot:  return makeScoutBot(id, loc);
+	    case VisionBot:  return makeVisionBot(id, loc);
 	    }
 	return null;
     }
@@ -33,6 +34,16 @@ public class MazeRobotFactory{
 	bot.setCheckMove(new CheckMoveNormal());
 	bot.setCheckCoin(new CheckCoin(coins));
 	bot.setScanMethod(new ScanMethodNormal(3));
+	return bot;
+    }
+
+    public static MazeRobot makeVisionBot(int id, MazeLocation loc){
+	MazeRobot bot = new MazeRobot(ModelType.VisionBot, id, loc);
+	List<CoinType> coins = new ArrayList<CoinType>();
+     
+	bot.setCheckMove(new CheckMoveStationary());
+	bot.setCheckCoin(new CheckCoin(coins));
+	bot.setScanMethod(new ScanMethodVisionBot());
 	return bot;
     }
 }
