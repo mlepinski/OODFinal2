@@ -11,6 +11,7 @@ public class MazeRobotFactory{
 	    case CoinBot: return makeCoinBot(id, loc);
 	    case ScoutBot:  return makeScoutBot(id, loc);
 	    case VisionBot:  return makeVisionBot(id, loc);
+	    case GhostBot:  return makeGhostBot(id, loc);
 	    }
 	return null;
     }
@@ -46,6 +47,18 @@ public class MazeRobotFactory{
 	bot.setScanMethod(new ScanMethodVisionBot());
 	return bot;
     }
+
+    public static MazeRobot makeGhostBot(int id, MazeLocation loc){
+	MazeRobot bot = new MazeRobot(ModelType.GhostBot, id, loc);
+	List<CoinType> coins = new ArrayList<CoinType>();
+	coins.add(CoinType.Diamond);
+  
+	bot.setCheckMove(new CheckMoveGhost());
+	bot.setCheckCoin(new CheckCoin(coins));
+	bot.setScanMethod(new ScanMethodNormal(1));
+	return bot;
+    }
+    
 }
 		    
 	    

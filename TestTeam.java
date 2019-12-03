@@ -15,8 +15,8 @@ public class TestTeam implements PlayerSearchingTeam, PlayerHidingTeam{
     public List<Robot> chooseRobots(GameState state){
 	cur_state = state;
 	ArrayList<Robot> bots = new ArrayList<Robot>();
-	bots.add(new Robot(ModelType.VisionBot, 1));
-	bots.add(new Robot(ModelType.ScoutBot, 2));
+	bots.add(new Robot(ModelType.CoinBot, 1));
+	bots.add(new Robot(ModelType.GhostBot, 2));
        
 	return bots;
     }
@@ -30,7 +30,7 @@ public class TestTeam implements PlayerSearchingTeam, PlayerHidingTeam{
 		Command com = new CommandMove(bot, DirType.East);
 		the_coms.add(com);
 	    }
-	    if(bot.getModel() == ModelType.ScoutBot){
+	    if(bot.getModel() == ModelType.GhostBot){
 		Command com = new CommandMove(bot, DirType.West);
 		the_coms.add(com);
 	    }
