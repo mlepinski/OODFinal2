@@ -54,14 +54,14 @@ There are types of Robots: (**Note:** Not all ModelTypes are currently implement
 1) CoinBot can pick up any type of Coin and can see one square in every direction (walls do not block vision)
 2) ScoutBot cannot pick up any Coin, but ScoutBot can see all squares within a distance of three from the ScoutBot
    (walls do not block the ScoutBot vision)
-3) FastBot can only pick up Gold Coins. FastBot can see one square in every direction (walls do not block vision).
-   FastBot can move two squares every turn. (Only FastBot can use CommandFastMove)
-4) GhostBot can pick up only Diamond Coins (not Gold). GhostBot can see one square in every direction (walls do not block vision)
+3) GhostBot can pick up only Diamond Coins (not Gold). GhostBot can see one square in every direction (walls do not block vision)
    GhostBot can move through walls and STONE obstacles. GhostBot is not limited by the available directions at a location
+4) EscortBot cannot pick up coins. EscortBot can see two squares in every direction (walls do not block vision)
+   SLOW obstacles in the same square as EscortBot or in adjacent squares have no affect on any robot.
 5) VisionBot cannot pick up coins. VisionBot cannot move. 
    VisionBot can see every Location in the Maze that contains a Coin (walls and distance do not matter)
-6) EscortBot cannot pick up coins. EscortBot can see two squares in every direction (walls do not block vision)
-   SLOW obstacles in the same square as EscortBot or in adjacent squares have no affect on any robot.
+6) FastBot can only pick up Gold Coins. FastBot can see one square away, but cannot see through walls.
+   FastBot can execute two commands every turn. (Only FastBot can use CommandFastMove)
 7) BasicBot can pick up Gold Coins. BasicBot can see three squares, but cannot see through walls. 
-   BasicBot is the only robot whose vision is limited by walls
+   BasicBot and FastBot are the only robots whose vision is limited by walls
  
