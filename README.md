@@ -64,5 +64,5 @@ There are types of Robots: (**Note:** Not all ModelTypes are currently implement
 6) FastBot can only pick up Gold Coins. FastBot can see one square away, but cannot see through walls.
    FastBot can execute two commands every turn. (Only FastBot can use CommandFastMove)
 7) BasicBot can pick up Gold Coins. BasicBot can see three squares, but cannot see through walls. 
-   BasicBot and FastBot are the only robots whose vision is limited by walls
+   BasicBot cannot see through walls, but can see around corners.
  
