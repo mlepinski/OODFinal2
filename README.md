@@ -26,6 +26,7 @@ A) The GameEngine generates a maze and hands it to the hiding team
 B) The hiding team is asked to place COINS into the maze
 C) The hiding team is asked to place OBSTACLES into the maze
 D) The GameEngine generates a random starting location on the edge of the Maze
+   The searching team will always start in the middle of one of the four outer edges
 E) The searching team selects which robots they want on their team
 F) The searching team searches the maze, just like in the prior Vision Project. 
 G) The teams switch roles and we start back at Step A
