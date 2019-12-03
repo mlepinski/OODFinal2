@@ -12,6 +12,9 @@ public class MazeRobotFactory{
 	    case ScoutBot:  return makeScoutBot(id, loc);
 	    case VisionBot:  return makeVisionBot(id, loc);
 	    case GhostBot:  return makeGhostBot(id, loc);
+	    case BasicBot:  return makeBasicBot(id, loc);
+	    case FastBot:   return makeFastBot(id, loc);
+	    case EscortBot: return makeEscortBot(id, loc);
 	    }
 	return null;
     }
@@ -35,6 +38,39 @@ public class MazeRobotFactory{
 	bot.setCheckMove(new CheckMoveNormal());
 	bot.setCheckCoin(new CheckCoin(coins));
 	bot.setScanMethod(new ScanMethodNormal(3));
+	return bot;
+    }
+
+    public static MazeRobot makeBasicBot(int id, MazeLocation loc){
+	MazeRobot bot = new MazeRobot(ModelType.BasicBot, id, loc);
+	List<CoinType> coins = new ArrayList<CoinType>();
+	coins.add(CoinType.Gold);
+     
+	bot.setCheckMove(new CheckMoveNormal());
+	bot.setCheckCoin(new CheckCoin(coins));
+	bot.setScanMethod(new ScanMethodWalls(3));
+	return bot;
+    }
+
+    public static MazeRobot makeFastBot(int id, MazeLocation loc){
+	MazeRobot bot = new MazeRobot(ModelType.FastBot, id, loc);
+	List<CoinType> coins = new ArrayList<CoinType>();
+	coins.add(CoinType.Gold);
+     
+	bot.setCheckMove(new CheckMoveNormal());
+	bot.setCheckCoin(new CheckCoin(coins));
+	bot.setScanMethod(new ScanMethodWalls(1));
+	return bot;
+    }
+
+    public static MazeRobot makeEscortBot(int id, MazeLocation loc){
+	MazeRobot bot = new MazeRobot(ModelType.EscortBot, id, loc);
+	List<CoinType> coins = new ArrayList<CoinType>();
+	coins.add(CoinType.Gold);
+     
+	bot.setCheckMove(new CheckMoveNormal());
+	bot.setCheckCoin(new CheckCoin(coins));
+	bot.setScanMethod(new ScanMethodNormal(2));
 	return bot;
     }
 
