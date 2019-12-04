@@ -278,7 +278,7 @@ public class GameEngine extends Application{
 	    the_model = bot.getModel();
 	    the_id = bot.getID();
 	    maz_bot = the_maze.getRobot(the_id);
-	    if(maz_bot.ready == true){
+	    if(maz_bot.ready == true && maz_bot.getModel()!=ModelType.VisionBot){
 		ready_bots.add(new Robot(the_model, the_id));
 	    }
 	    else{
