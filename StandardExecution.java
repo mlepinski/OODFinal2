@@ -9,14 +9,13 @@ class StandardExecution implements CommandExecution{
 	processFastMoves(team_cmds);
 	
 	executeMoves(the_maze, team_cmds);
-	
-	updateRobotLocs(the_maze);
 
 	executePickUp(the_maze, team_cmds, the_state);
     
     }
 
     //This function changes the location inside each Maze Robot
+    //NO LONGER USED -- EXECUTE MOVES ALSO UPDATES LOCATION
     void updateRobotLocs(Maze the_maze){
 	int max_x = the_maze.getMaxX();
 	int max_y = the_maze.getMaxY();
@@ -91,7 +90,8 @@ class StandardExecution implements CommandExecution{
 	}
     }
 
-    //This code changes the Maze but not the Location in the Robot
+    //This code changes the Maze
+    //Now Also changes the Location in the Robot
     void moveRobot(MazeRobot bot, Maze the_maze, CommandMove cmd){
 	MazeLocation old_loc = bot.getCurrentLoc();
 
@@ -117,6 +117,9 @@ class StandardExecution implements CommandExecution{
 	    }
 	    new_loc.getRobots().add(bot);
 	    old_loc.getRobots().remove(bot);
+
+	    //Now also updates the bot's location
+	    bot.setCurrentLoc(new_loc);
 
 	    if ((new_loc.getObstacles() != null) && new_loc.getObstacles().contains(ObstacleType.Slow)){
 		bot.ready = false;
