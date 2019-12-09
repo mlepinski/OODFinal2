@@ -16,16 +16,16 @@ import javafx.stage.Stage;
 
 
 public class GameEngine extends Application{
-    final int NUM_TURNS = 40;
-    final int NUM_GOLD = 20;
+    final int NUM_TURNS = 48;
+    final int NUM_GOLD = 24;
     final int NUM_DIAMOND = 2;
     final int NUM_STONE = 1;
-    final int NUM_SLOW = 8;
-    final int NUM_DARK = 8;
+    final int NUM_SLOW = 12;
+    final int NUM_DARK = 12;
 	
     final String team_name = "Test Team";
     final double DELAY_TIME = 2.0;
-    final String maze_file = "example1.maze";
+    final String maze_file = "example2.maze";
 
     PlayerSearchingTeam the_team;
     PlayerHidingTeam other_team;
